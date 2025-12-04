@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: contador-numeros-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: contador-numeros
+  template:
+    metadata:
+      labels:
+        app: contador-numeros
+    spec:
+      containers:
+      - name: contador-numeros
+        image: jjcampoy10/contador-numeros:latest
+        imagePullPolicy: Always
+
